@@ -127,7 +127,7 @@
     function wheel(event){
       if(self.active()){
         event = $.event.fix(event || window.event);
-        var iDelta = event.wheelDelta ? event.wheelDelta/120 : -event.detail/3;
+        var iDelta = event.originalEvent.wheelDelta ? event.originalEvent.wheelDelta/120 : -event.detail/3;
         iScroll -= iDelta * options.wheel;
         iScroll = Math.min(offscreenSize, Math.max(0, iScroll));
         thumb.css(cssDirection, iScroll / scrollbarRatio);
