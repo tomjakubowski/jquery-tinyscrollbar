@@ -2,7 +2,7 @@
  * Tiny Scrollbar 1.65
  * http://www.baijs.nl/tinyscrollbar/
  *
- * Copyright 2010, Maarten Baijs
+ * Copyright 2010, Maarten Baij`
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.opensource.org/licenses/gpl-2.0.php
@@ -10,6 +10,8 @@
  * Date: 10 / 05 / 2011
  * Depends on library: jQuery
  *
+ * Forked by: Tom Jakubowski
+ * http://github.com/tomjakubowski/jquery-tinyscrollbar
  */
 
 (function($){
@@ -127,7 +129,7 @@
     function wheel(event){
       if(self.active()){
         event = $.event.fix(event || window.event);
-        var iDelta = event.originalEvent.wheelDelta ? event.originalEvent.wheelDelta/120 : -event.detail/3;
+        var iDelta = event.originalEvent.wheelDelta ? event.originalEvent.wheelDelta/120 : -event.originalEvent.detail/3;
         iScroll -= iDelta * options.wheel;
         iScroll = Math.min(offscreenSize, Math.max(0, iScroll));
         thumb.css(cssDirection, iScroll / scrollbarRatio);
